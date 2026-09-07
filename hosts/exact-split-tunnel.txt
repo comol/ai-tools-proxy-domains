@@ -1,0 +1,36 @@
+# Exact hosts for a narrow split-tunnel (not Proxifier wildcards).
+# Source: IT Does Matter, 2026-09-05. Completeness not guaranteed.
+
+# Anthropic / Claude
+anthropic.com
+api.anthropic.com
+console.anthropic.com
+claude.ai
+claude.com
+
+# OpenAI
+openai.com
+chatgpt.com
+
+# DeepSeek
+deepseek.com
+
+# Cursor (many service subdomains)
+cursor.com
+cursor.sh
+cursorapi.com
+cursor-cdn.com
+downloads.cursor.com
+api2.cursor.sh
+api3.cursor.sh
+api4.cursor.sh
+api5.cursor.sh
+authentication.cursor.sh
+authenticator.cursor.sh
+gcpp.cursor.sh
+repo42.cursor.sh
+anysphere-binaries.s3.us-east-1.amazonaws.com
+
+# Amazon Kiro
+kiro.dev
+awsapps.com

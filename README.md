@@ -4,7 +4,7 @@
 
 Два варианта:
 
-1. **Точные домены** — узкий split-tunnel. Меньше побочек, легче дырки, если вендор завёл новый поддомен.
+1. **Точные домены** — узкий split-tunnel. Меньше побочек, легче дырки, если вендор завёл новый поддомен. Для Cursor учитывайте также маски поддоменов из [`hosts/cursor-required-domains.txt`](hosts/cursor-required-domains.txt).
 2. **Маски Proxifier** — «лучше перебдеть». Ловит служебные CDN/телеметрию, но `*google*`, `*github*`, `*microsoft.com*`, `*cloudflare*` и `*windowsupdate*` заворачивают уже почти всё подряд.
 
 Схема, которая у автора масок работает без VPS:
@@ -20,9 +20,18 @@
 | Файл | Что внутри |
 | --- | --- |
 | `hosts/exact-split-tunnel.txt` | Точные хосты (Claude, OpenAI, DeepSeek, Cursor, Kiro) |
+| `hosts/cursor-required-domains.txt` | Required Domains со скриншота Cursor: точные хосты и маски поддоменов, плюс два базовых хоста |
 | `networks/telegram-ipv4-cidrs.txt` | Девять IPv4-подсетей Telegram из присланной конфигурации роутера |
 | `proxifier/ai-services-masks.txt` | Строка масок для правила Target Hosts в Proxifier |
 | `proxifier/rules.md` | Порядок правил и зачем нужен брандмауэр |
+
+## Required Domains в Cursor
+
+[`hosts/cursor-required-domains.txt`](hosts/cursor-required-domains.txt) содержит все 10 записей из **Settings → Browser & Network → Required Domains** на присланном скриншоте, сверенном 9 октября 2026. В том числе `*.api5.cursor.sh` для запросов агента и `*.authentication.cursor.sh` для авторизации.
+
+Точные записи `api5.cursor.sh` и `authentication.cursor.sh` сами по себе не покрывают поддомены. Для роутера используйте правила с поддержкой `*.` либо эквивалентные правила доменного суффикса, включающие поддомены; конкретный синтаксис зависит от прошивки. Два базовых хоста также сохранены в списке, поскольку маска `*.домен` не совпадает с самим `домен` при обычном сопоставлении масок.
+
+В [`proxifier/ai-services-masks.txt`](proxifier/ai-services-masks.txt) маска `*cursor*` уже покрывает все записи со скриншота, включая поддомены. В [Proxifier](https://www.proxifier.com/docs/win-v4/rules.html) `*` означает любую подстроку. Это проверка покрытия списков; доступность соединений проверяется отдельно через **Run Diagnostic** в Cursor.
 
 ## Списки для роутера
 
@@ -37,6 +46,7 @@
 - Точный список: канал/чат IT Does Matter, сентябрь 2026.
 - Маски и схема Proxifier + LocalOnly firewall: Александр Маляев ([@maljaev](https://github.com/maljaev-alex)), с его согласия на публичный релиз.
 - Дополнение доменов Cursor и IPv4-подсетей для роутера: сообщение пользователя, 9 октября 2026; подсети сверены с официальным списком Telegram.
+- Required Domains Cursor: присланный пользователем скриншот настроек, сверенный 9 октября 2026.
 
 ## Чего здесь нет
 

@@ -17,6 +17,8 @@ chatgpt.com
 deepseek.com
 
 # Cursor (many service subdomains)
+# Required wildcard subdomains are listed in cursor-required-domains.txt.
+# api5.cursor.sh and authentication.cursor.sh alone do not cover subdomains.
 cursor.com
 cursor.sh
 cursorapi.com

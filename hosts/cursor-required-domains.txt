@@ -1,0 +1,20 @@
+# Cursor Settings > Browser & Network > Required Domains.
+# Source: user-provided screenshot, checked 2026-10-09.
+# Exact hosts and wildcard subdomains; requires wildcard-aware domain rules.
+# A bare domain does not cover its subdomains in an exact-match rule.
+
+api2.cursor.sh
+api3.cursor.sh
+api4.cursor.sh
+*.api5.cursor.sh
+repo42.cursor.sh
+*.authentication.cursor.sh
+authenticator.cursor.sh
+marketplace.cursorapi.com
+cursor-cdn.com
+downloads.cursor.com
+
+# Also retain the two base hosts from the user-reported router setup.
+# A wildcard with a leading dot does not match the base host itself.
+api5.cursor.sh
+authentication.cursor.sh

@@ -1,0 +1,36 @@
+# Optional dependencies: package/plugin installs and Claude artifact rendering.
+# Checked 2026-10-09. Enable only the sections you need.
+# Sources:
+# https://code.claude.com/docs/en/network-config
+# https://support.claude.com/en/articles/12111783-create-and-edit-files-with-claude
+# https://docs.github.com/en/actions/reference/runners/self-hosted-runners
+# https://docs.openclaw.ai/install
+
+# GitHub-hosted plugin repositories and npm/npx package dependencies.
+# A repository's downloads/redirects can additionally need their target hosts.
+github.com
+api.github.com
+codeload.github.com
+objects.githubusercontent.com
+release-assets.githubusercontent.com
+# Raw sources also used in the official Hermes repository/source links.
+raw.githubusercontent.com
+registry.npmjs.org
+
+# OpenClaw installer script (not needed for normal model requests).
+openclaw.ai
+
+# Python packages (pip/uv installation workflows, not model inference).
+pypi.org
+files.pythonhosted.org
+
+# JavaScript libraries used by some Claude artifacts.
+cdnjs.cloudflare.com
+cdn.jsdelivr.net
+cdn.tailwindcss.com
+code.jquery.com
+unpkg.com
+
+# Fonts used by some Claude artifacts; fallback fonts work without these.
+fonts.googleapis.com
+fonts.gstatic.com

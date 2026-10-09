@@ -1,0 +1,57 @@
+# OpenAI API, ChatGPT and Codex. Checked 2026-10-09.
+# Exact hosts + wildcard subdomains; select groups for the products you use.
+# Sources:
+# https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps
+# https://developers.openai.com/api/reference/overview
+
+# API and web apps. Bare domains are explicit: *.domain does not match domain.
+openai.com
+api.openai.com
+platform.openai.com
+chatgpt.com
+chat.openai.com
+auth.openai.com
+auth0.openai.com
+setup.auth.openai.com
+*.openai.com
+*.auth.openai.com
+*.chatgpt.com
+
+# Static assets and uploaded/generated files.
+*.oaistatic.com
+*.oaiusercontent.com
+files.oaiusercontent.com
+cdn.openaimerge.com
+
+# Streaming/notifications; also allow WebSocket Upgrade on TCP 443.
+ws.chatgpt.com
+
+# Desktop/mobile clients.
+desktop.chat.openai.com
+android.chat.openai.com
+ios.chat.openai.com
+tcr9i.chat.openai.com
+humb.apple.com
+
+# Sign-in/challenge dependencies listed by OpenAI.
+cdn.workos.com
+forwarder.workos.com
+frontend-apps-multi-region.workos.com
+images.workoscdn.com
+setup.workos.com
+workos.imgix.net
+challenges.cloudflare.com
+
+# Other entries in OpenAI's web/app allowlist: support, payment, email, telemetry.
+# Not a requirement for a standalone API-only client.
+*.ct.sendgrid.net
+*.intercom.io
+*.intercomcdn.com
+js.intercomcdn.com
+js.stripe.com
+*.oaistatsig.com
+o207216.ingest.sentry.io
+o33249.ingest.sentry.io
+rum.browser-intake-datadoghq.com
+
+# Voice needs transport/IP rules too; see docs/service-domains.md.

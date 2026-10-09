@@ -1,0 +1,42 @@
+# Claude web, Desktop and standalone Claude Code. Checked 2026-10-09.
+# Sources:
+# https://code.claude.com/docs/en/network-config
+# https://code.claude.com/docs/en/desktop#network-access-requirements
+
+# Direct Anthropic API and account sign-in/token exchange.
+anthropic.com
+api.anthropic.com
+claude.ai
+claude.com
+platform.claude.com
+
+# Web/Desktop application code and CDN hosts.
+a-api.anthropic.com
+a-cdn.anthropic.com
+s-cdn.anthropic.com
+assets-proxy.anthropic.com
+a.claude.ai
+assets.claude.ai
+
+# Dynamic previews, artifacts and interactive connector widgets.
+*.livepreview.claude.ai
+*.livepreview.claude.app
+*.claudeusercontent.com
+*.claudemcpcontent.com
+*.frame.claudeusercontent.com
+
+# Native installer/updater and plugin executables.
+downloads.claude.ai
+
+# Conditional: claude.ai MCP connectors and Claude in Chrome.
+mcp-proxy.anthropic.com
+bridge.claudeusercontent.com
+
+# Conditional: plugin catalog metadata and older native installers (<2.1.116).
+storage.googleapis.com
+
+# Conditional: documentation lookup.
+code.claude.com
+
+# Plugin packages, artifact JS libraries and fonts: optional-dependencies.txt.
+# Bedrock/Vertex/Foundry/custom gateway endpoints depend on your configuration.

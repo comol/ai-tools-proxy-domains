@@ -1,6 +1,8 @@
 # AI tools proxy domains
 
-Списки хостов и масок Proxifier, чтобы гонять Cursor, Codex, Claude и соседние AI-сервисы через прокси **без полного VPN на всю машину**.
+Списки хостов и масок Proxifier для Cursor, OpenAI/ChatGPT/Codex, Grok, Claude и интеграций OpenClaw/Hermes — через прокси **без полного VPN на всю машину**.
+
+Проверенные дополнения от **9 октября 2026**, назначение адресов и ссылки на официальные источники: [домены по сервисам](docs/service-domains.md). Зависимости отдельных функций и установки отмечены как условные.
 
 Два варианта:
 
@@ -19,15 +21,21 @@
 
 | Файл | Что внутри |
 | --- | --- |
-| `hosts/exact-split-tunnel.txt` | Точные хосты (Claude, OpenAI, DeepSeek, Cursor, Kiro) |
-| `hosts/cursor-required-domains.txt` | Required Domains со скриншота Cursor: точные хосты и маски поддоменов, плюс два базовых хоста |
+| `hosts/exact-split-tunnel.txt` | Совместимый частичный список точных хостов; без динамических поддоменов |
+| `hosts/cursor-required-domains.txt` | Required Domains со скриншота + дополнения из документации Cursor |
+| `hosts/openai-domains.txt` | OpenAI API, ChatGPT, Codex, файлы, CDN и вход |
+| `hosts/claude-domains.txt` | Claude web/Desktop/Code, обновления, артефакты и MCP |
+| `hosts/grok-domains.txt` | Grok, xAI API, вход и Grok Build |
+| `hosts/agent-integrations.txt` | OpenClaw/Hermes: выбранные провайдеры, Nous, каналы и инструменты |
+| `hosts/optional-dependencies.txt` | Установка пакетов, плагины, JS-библиотеки и шрифты |
 | `networks/telegram-ipv4-cidrs.txt` | Девять IPv4-подсетей Telegram из присланной конфигурации роутера |
 | `proxifier/ai-services-masks.txt` | Строка масок для правила Target Hosts в Proxifier |
 | `proxifier/rules.md` | Порядок правил и зачем нужен брандмауэр |
+| `docs/service-domains.md` | Назначение адресов, ограничения, сетевые требования и источники |
 
 ## Required Domains в Cursor
 
-[`hosts/cursor-required-domains.txt`](hosts/cursor-required-domains.txt) содержит все 10 записей из **Settings → Browser & Network → Required Domains** на присланном скриншоте, сверенном 9 октября 2026. В том числе `*.api5.cursor.sh` для запросов агента и `*.authentication.cursor.sh` для авторизации.
+[`hosts/cursor-required-domains.txt`](hosts/cursor-required-domains.txt) содержит все 10 записей из **Settings → Browser & Network → Required Domains** на присланном скриншоте и дополнения из актуальной документации. В том числе `*.api5.cursor.sh` для запросов агента и `*.authentication.cursor.sh` для авторизации. Отдельными разделами добавлены региональные серверы, адреса общего входа и hosted computers.
 
 Точные записи `api5.cursor.sh` и `authentication.cursor.sh` сами по себе не покрывают поддомены. Для роутера используйте правила с поддержкой `*.` либо эквивалентные правила доменного суффикса, включающие поддомены; конкретный синтаксис зависит от прошивки. Два базовых хоста также сохранены в списке, поскольку маска `*.домен` не совпадает с самим `домен` при обычном сопоставлении масок.
 

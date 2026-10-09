@@ -1,6 +1,9 @@
 # Exact hosts for a narrow split-tunnel (not Proxifier wildcards).
 # Source: IT Does Matter, 2026-09-05. Completeness not guaranteed.
 # marketplace.cursorapi.com added from a user-reported router setup, 2026-10-09.
+# Selected documented endpoints added 2026-10-09; sources: docs/service-domains.md.
+# This compatibility list is exact-only and partial. Use service profiles for
+# dynamic subdomains and conditional features; do not strip their wildcards.
 
 # Anthropic / Claude
 anthropic.com
@@ -8,13 +11,27 @@ api.anthropic.com
 console.anthropic.com
 claude.ai
 claude.com
+platform.claude.com
+downloads.claude.ai
+assets-proxy.anthropic.com
+mcp-proxy.anthropic.com
+bridge.claudeusercontent.com
 
 # OpenAI
 openai.com
 chatgpt.com
+api.openai.com
+platform.openai.com
+auth.openai.com
+auth0.openai.com
+chat.openai.com
+ws.chatgpt.com
+files.oaiusercontent.com
+cdn.openaimerge.com
 
 # DeepSeek
 deepseek.com
+api.deepseek.com
 
 # Cursor (many service subdomains)
 # Required wildcard subdomains are listed in cursor-required-domains.txt.
@@ -32,8 +49,41 @@ api5.cursor.sh
 authentication.cursor.sh
 authenticator.cursor.sh
 gcpp.cursor.sh
+us-asia.gcpp.cursor.sh
+us-eu.gcpp.cursor.sh
+us-only.gcpp.cursor.sh
 repo42.cursor.sh
+agent.api5.cursor.sh
+agentn.api5.cursor.sh
+agent.us.api5.cursor.sh
+agentn.us.api5.cursor.sh
+agent.global.api5.cursor.sh
+agentn.global.api5.cursor.sh
+authenticate.cursor.sh
+prod.authentication.cursor.sh
+adminportal42.cursor.sh
 anysphere-binaries.s3.us-east-1.amazonaws.com
+
+# Grok / xAI and shared Cursor sign-in hosts
+grok.com
+api.x.ai
+console.x.ai
+accounts.x.ai
+accounts.spacex.ai
+auth.x.ai
+auth.grok.com
+auth.grokusercontent.com
+auth.grokipedia.com
+cli-chat-proxy.grok.com
+
+# OpenClaw / Hermes: include only for enabled integrations
+openrouter.ai
+portal.nousresearch.com
+inference-api.nousresearch.com
+tool-gateway.nousresearch.com
+connector-gateway.nousresearch.com
+clawhub.ai
+api.telegram.org
 
 # Amazon Kiro
 kiro.dev

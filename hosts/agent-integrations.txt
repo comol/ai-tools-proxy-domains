@@ -1,0 +1,54 @@
+# OpenClaw and Hermes: conditional integrations, not a universal required list.
+# Checked 2026-10-09. Use only the sections enabled in your configuration.
+# Model traffic also needs the chosen provider's list (OpenAI/Claude/Grok/etc.).
+# Custom base URLs, MCP servers and browsed websites need their own rules.
+
+# OpenRouter (if selected as the model provider).
+# https://docs.openclaw.ai/providers/openrouter
+# https://github.com/NousResearch/hermes-agent/blob/73162b00eefde3794bed0afb53d84a19c0eed230/hermes_constants.py
+openrouter.ai
+
+# DeepSeek (if selected).
+# https://hermes-agent.nousresearch.com/docs/integrations/providers
+api.deepseek.com
+
+# Hermes Nous Portal subscription: OAuth, inference and managed tools.
+# https://hermes-agent.nousresearch.com/docs/integrations/nous-portal
+# https://hermes-agent.nousresearch.com/docs/user-guide/features/tool-gateway
+# Default domain and host construction verified in:
+# https://github.com/NousResearch/hermes-agent/blob/73162b00eefde3794bed0afb53d84a19c0eed230/tools/managed_tool_gateway.py
+portal.nousresearch.com
+inference-api.nousresearch.com
+tool-gateway.nousresearch.com
+connector-gateway.nousresearch.com
+*.nousresearch.com
+
+# OpenClaw skill registry (if installing/searching ClawHub skills).
+# https://docs.openclaw.ai/clawhub/http-api
+clawhub.ai
+
+# Telegram Bot API, including bot file downloads (not MTProto client routing).
+# https://core.telegram.org/bots/api#making-requests
+# https://docs.openclaw.ai/channels/telegram/troubleshooting
+api.telegram.org
+
+# Discord bot REST API, Gateway WebSocket and attachment CDN.
+# https://docs.discord.com/developers/reference
+# https://docs.discord.com/developers/events/gateway
+discord.com
+gateway.discord.gg
+cdn.discordapp.com
+
+# Web search/extraction: select only the backend(s) actually configured.
+# https://docs.openclaw.ai/tools/web
+# https://api-dashboard.search.brave.com/app/documentation/web-search/get-started
+api.search.brave.com
+# https://docs.openclaw.ai/tools/firecrawl
+api.firecrawl.dev
+# https://exa.ai/docs/reference/search
+api.exa.ai
+# https://docs.tavily.com/documentation/api-reference/endpoint/search
+api.tavily.com
+
+# Installation/updates and external libraries: optional-dependencies.txt.
+# Local gateways/Ollama/LM Studio/localhost should use a local Direct route.

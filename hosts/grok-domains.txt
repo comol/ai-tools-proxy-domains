@@ -1,0 +1,32 @@
+# Grok website, xAI API and Grok Build. Checked 2026-10-09.
+# Sources:
+# https://docs.x.ai/overview
+# https://docs.x.ai/grok/faq
+# https://docs.x.ai/build/enterprise
+# https://cursor.com/help/troubleshooting/sign-in-domains
+
+# Direct API and API key/account management.
+api.x.ai
+console.x.ai
+accounts.x.ai
+auth.x.ai
+
+# Grok web, authentication and user content.
+grok.com
+*.grok.com
+auth.grok.com
+*.grokusercontent.com
+auth.grokusercontent.com
+
+# Shared sign-in hosts also listed in current Cursor documentation.
+accounts.spacex.ai
+auth.grokipedia.com
+
+# Conditional: Grok Build CLI inference proxy (browser/device login).
+cli-chat-proxy.grok.com
+
+# Regional/other xAI subdomains; use if you need broader xAI coverage.
+x.ai
+*.x.ai
+
+# Corporate IdP and external login providers depend on the chosen sign-in method.

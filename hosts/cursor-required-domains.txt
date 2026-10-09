@@ -18,3 +18,45 @@ downloads.cursor.com
 # A wildcard with a leading dot does not match the base host itself.
 api5.cursor.sh
 authentication.cursor.sh
+
+# Base domains retained from the user-reported router list.
+cursor.com
+cursor.sh
+cursorapi.com
+
+# Additional documented hosts, checked 2026-10-09.
+# https://cursor.com/docs/enterprise/network-configuration
+# Regional Cursor Tab endpoints.
+us-asia.gcpp.cursor.sh
+us-eu.gcpp.cursor.sh
+us-only.gcpp.cursor.sh
+
+# Agent/network access layer: concrete hosts for exact-match routers.
+agent.api5.cursor.sh
+agentn.api5.cursor.sh
+agent.us.api5.cursor.sh
+agentn.us.api5.cursor.sh
+agent.global.api5.cursor.sh
+agentn.global.api5.cursor.sh
+
+# Authorization and production token issuer.
+authenticate.cursor.sh
+prod.authentication.cursor.sh
+
+# Current shared sign-in hosts; legacy sign-in is retained during transition.
+# https://cursor.com/help/troubleshooting/sign-in-domains
+accounts.spacex.ai
+accounts.x.ai
+auth.x.ai
+auth.grok.com
+auth.grokusercontent.com
+auth.grokipedia.com
+
+# Conditional: SSO/domain administration and binary downloads.
+adminportal42.cursor.sh
+anysphere-binaries.s3.us-east-1.amazonaws.com
+
+# Conditional: hosted computers / Grok Bot. Some firewalls match one DNS label
+# per wildcard, hence both patterns from Cursor's network documentation.
+*.cursorvm.com
+*.*.cursorvm.com
